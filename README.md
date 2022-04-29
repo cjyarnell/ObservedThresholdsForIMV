@@ -8,3 +8,5 @@ These folders contain the code and scripts used to generate the cohort and perfo
 The cohort generation code is found in "BigQueryScripts" and "CreateCohortR." 
 The multiple imputation and analysis code is found in "MultipleImputation" and "Outcomes".
 The analysis was performed on the Compute Canada cluster. The shell scripts to submit the jobs to the slurm scheduler are available on request, just send me an email  christopher.yarnell@mail.utoronto.ca.
+
+[![DOI](https://zenodo.org/badge/486990421.svg)](https://zenodo.org/badge/latestdoi/486990421)
