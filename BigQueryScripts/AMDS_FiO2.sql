@@ -113,8 +113,8 @@ with tm as (
             12369, --SET %O2: used with BiPap Vision ventilator
             16246 --Zephyros FiO2: Non-invasive ventilation
         )
-    --measurements within 120 hours of ICU stay:
-    AND (n.measuredat - a.admittedat) <= 1000*60*60*120 AND (n.measuredat - a.admittedat) >= 0
+    --measurements within 144 hours of ICU stay:
+    AND (n.measuredat - a.admittedat) <= 1000*60*60*144 AND (n.measuredat - a.admittedat) >= -48*60*60*1000
     AND n.value > 0 --ignore stand by values from Evita ventilator
 
 union distinct

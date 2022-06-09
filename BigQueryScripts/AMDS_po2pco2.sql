@@ -68,9 +68,9 @@ WITH oxygenation AS (
             9996, --PO2 (bloed)
             21214 --PO2 (bloed) - kPa
         )
-    --measurements within 120 hours of ICU stay (use 30 minutes before admission to allow for time differences):
-    AND (pao2.measuredat - a.admittedat) <= 1000*60*60*120 
-    AND (pao2.measuredat - a.admittedat) >= -(1000*60*30) 
+    --measurements within 48 before / 144 hours after ICU stay :
+    AND (pao2.measuredat - a.admittedat) <= 1000*60*60*144 
+    AND (pao2.measuredat - a.admittedat) >= -(1000*60*48) 
     AND (lower(f.value) LIKE '%art.%' OR f.value IS NULL)  -- source is arterial or undefined (assume arterial)
 )
 SELECT * FROM oxygenation

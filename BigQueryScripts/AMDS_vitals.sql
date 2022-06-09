@@ -20,7 +20,9 @@ WHERE itemid IN (
     8843, --ABP gemiddeld II
     6709 -- spo2
 )
-AND (measuredat - a.admittedat) <= 1000*60*60*24 --measurements within 24 hours
+
+AND (measuredat - a.admittedat) <= 1000*60*60*144 --measurements within 144 hours
+AND (measuredat - a.admittedat) >= -1000*60*60*48 --measurements within 48h prior hours
 )
 
 select * from tm where validated = TRUE order by 1,2,3
